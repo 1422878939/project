@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body,html{
+				width: 100%;
+				height: 100%;
+				margin: 0;
+			}
+			div{
+				width: 100%;
+				height: 100%;
+				background-repeat: no-repeat;
+				background-size: cover;
+				display: none;
+			}
+			#div-1{
+				
+				background-image: url(img/img/halloween1.jpg);
+				display: block;
+				
+			}
+			#div-2{
+				
+				background-image: url(img/img/halloween2.jpg)
+				
+			}
+			#div-3{
+				background-image: url(img/img/halloweenMain.jpg);
+			}
+			#title{
+				position: absolute;
+				left: 330px;
+				top: 20px;
+				animation: titles 1s;
+			}
+			/* css时间帧 */
+			@keyframes titles{
+				from{opacity: 1;}
+				to{opacity: 0;}
+			}
+			#box{
+				position: absolute;
+				left: 350px;
+				bottom: 200px;
+				animation: boxes 1s infinite;
+			}
+			@keyframes boxes{
+				from{left: 350px;}
+				to{left: 310px;}
+			}
+			#img-1{
+				animation: move1 2s infinite;
+				position: absolute;
+				
+			}
+			#img-2{
+				animation:move2 2s infinite;
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				
+			}
+			#img-3{
+				position: absolute;
+				right: 10px;
+				bottom: 10px;
+				animation: move3 2s infinite;
+			}
+			@keyframes move3{
+				0%{
+					right: 10px;
+					bottom: 10px;
+				}
+				100%{
+					right: 500px;
+					bottom: 0.625rem;
+				}
+			}
+			@keyframes move2{
+				0%{
+					right: 30px;
+					top: 50px;
+				}
+				100%{
+					right: 700px;
+					top: 1000px;
+				}
+			}
+			@keyframes move1{
+				0%{
+					left: 50px;
+					top: 30px;
+				}
+			33%{
+				left: 50px;
+				top: 200px;
+				opacity: 0;
+			}
+			66%{
+				left: 300px;
+				top: 200px;
+			}
+			100%{
+				left: 50px;
+				top: 30px;
+				
+				
+			}
+				
+			
+			}
+		</style>
+		<script type="text/javascript">
+			function change_div(num){
+				var d1=document.getElementsByTagName("div")
+				/* 隐藏显示 */
+				if (num==1) {
+					d1[0].style.display="none";
+					d1[1].style.display="block";
+					d1[2].style.display="none";
+				}
+				if (num==2) {
+					d1[0].style.display="none";
+					d1[1].style.display="none";
+					d1[2].style.display="block";
+				}
+				if (num==3) {
+					d1[0].style.display="none";
+					d1[1].style.display="none";
+					d1[2].style.display="none";
+					d1[3].style.display="block";
+				}
+			}
+			function change_bg(num)
+			{
+				change_div(3);
+				var d4=document.getElementById("div-4");
+				if (num==1) {
+					d4.style.backgroundImage="url(img/img/charm5.jpg)"
+				}
+				if (num==2) {
+					d4.style.backgroundImage="url(img/img/charm4.jpg)"
+				}
+				if (num==3) {
+					d4.style.backgroundImage="url(img/img/charm3.jpg)"
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div-1">
+			<img id="title" src="img/img/title.png" >
+			<img  id="box" src="img/img/box.png" onclick="change_div(1)" >
+		</div>
+		<div id="div-2">
+			<img src="img/img/pumpkin.png" style="position: absolute;left: 300px;">
+			<img onclick="change_div(2)" src="img/img/startGame.jpg" style="position: absolute;left: 400px;bottom: 400px;" >
+		</div>
+		<div id="div-3">
+			<img id="img-1" src="img/img/2.png" onclick="change_bg(1)" >
+			<img id="img-2" src="img/img/5.png" onclick="change_bg(2)">
+			<img id="img-3" src="img/img/3.png" onclick="change_bg(3)">
+		</div>
+		<div id="div-4">
+			
+		</div>
+	</body>
+</html>
